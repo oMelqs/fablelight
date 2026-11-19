@@ -1,0 +1,8 @@
+/* Character-sheet trackers and die picker. Tokens from styles.css. */
+.cb-die { width: 64px; height: 30px; padding: 0 4px; font-family: var(--mono); }
+.cb-pips { display: flex; gap: 5px; flex-wrap: wrap; align-items: center; font-family: var(--mono); color: var(--dim); }
+.cb-pip { width: 10px; height: 10px; border-radius: 50%; border: 1px solid var(--line2); background: none; padding: 0; cursor: pointer; transition: background .15s, border-color .15s; }
+.cb-pip:hover { border-color: var(--dim); }
+.cb-pip.on { background: var(--ac); border-color: var(--ac); }
+.btn.cb-mini, .cb-mini { height: 26px; min-width: 26px; padding: 0 7px; font-size: 12.5px; font-variant-numeric: tabular-nums; }
+.cb-sm { font-size: 12px; font-variant-numeric: tabular-nums; color: var(--dim); }

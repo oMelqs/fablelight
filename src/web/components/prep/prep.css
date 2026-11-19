@@ -1,0 +1,27 @@
+.pr-layout { display: grid; grid-template-columns: 300px 1fr; gap: 0; align-items: stretch; flex: 1; min-height: 0; }
+@media (max-width: 900px) { .pr-layout { grid-template-columns: 1fr; } }
+.pr-side { display: flex; flex-direction: column; gap: 0; background: var(--chrome); border-right: 1px solid var(--line); padding: 12px; overflow: auto; }
+.pr-session { padding: 12px 0; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
+.pr-session h3 { font-size: 13px; }
+.pr-scene { display: flex; align-items: center; gap: 2px; height: 30px; padding: 0 4px 0 10px; border-radius: 6px; cursor: pointer; color: var(--text); }
+.pr-scene:hover { background: var(--raise); }
+.pr-scene.sel { background: var(--raise2); color: var(--text); }
+.pr-scene span.t { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.btn.pr-mini, .pr-mini { height: 22px; padding: 0 6px; font-size: 12px; }
+.pr-big { min-height: 220px; font-size: 16px; line-height: 1.7; width: 100%; resize: vertical; }
+.pr-area { width: 100%; resize: vertical; min-height: 80px; }
+.pr-point { border-top: 1px solid var(--line); padding: 12px 0; }
+.pr-check { display: grid; grid-template-columns: 1.2fr 64px 2fr auto; gap: 6px; margin-top: 6px; }
+.pr-img { max-width: 100%; max-height: 220px; border-radius: 6px; display: block; }
+.pr-ctx { color: var(--dim); padding-left: 12px; border-left: 1px solid var(--line2); white-space: pre-wrap; line-height: 1.65; }
+.pr-gm { color: var(--faint); font-size: 11px; font-weight: 500; }
+.pr-checks { width: 100%; border-collapse: collapse; font-size: 12px; }
+.pr-checks td, .pr-checks th { text-align: left; padding: 5px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.pr-checks th { color: var(--faint); font-weight: 500; }
+.pr-checks td:nth-child(2) { font-family: var(--mono); color: var(--dim); }
+.pr-found { opacity: .45; }
+.pr-note { padding: 12px 0; border-bottom: 1px solid var(--line); }
+.pr-note.pinned h3::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--text); margin: 0 8px 1px 0; }
+.pr-body { white-space: pre-wrap; line-height: 1.6; }
+.pr-actions { display: flex; flex-wrap: wrap; gap: 4px; }
+.pr-sel { width: 100%; }

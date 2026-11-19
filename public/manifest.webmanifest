@@ -1,0 +1,13 @@
+{
+  "name": "Fablelight",
+  "short_name": "Fablelight",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#141311",
+  "theme_color": "#191816",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

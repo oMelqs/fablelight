@@ -1,0 +1,14 @@
+node_modules/
+dist/
+data/
+.env
+.env.*
+*.local
+.DS_Store
+
+# Arquivos pessoais de desenvolvimento (não publicar)
+prototypes/
+.impeccable/
+PRODUCT.md
+scripts/local/
+RPGTable.command
