@@ -37,7 +37,19 @@ export interface SystemConfig {
   difficulties: { label: string; dt: number }[]
 }
 
-export interface CampaignConfig { tracks?: SystemConfig['tracks'] }
+export type CoverPattern = 'ondas' | 'pontos' | 'grade' | 'raios'
+export type CoverTone = 'noite' | 'indigo' | 'brasa'
+export interface CampaignConfig {
+  tracks?: SystemConfig['tracks']
+  cover?: { pattern: CoverPattern; tone: CoverTone; image?: string }
+  archived?: boolean
+}
+/** One row of GET /api/hub. */
+export interface HubSummary {
+  id: number; sessions: number; pcs: number; last_played: string | null
+  next_session: { number: number | null; title: string | null; date: string | null } | null
+  last_session: { number: number | null; title: string | null } | null
+}
 
 export interface CharacterData {
   fields: Record<string, string | number>

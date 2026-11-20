@@ -13,7 +13,7 @@ export const NEW_CONFIG: SystemConfig = {
   roll: { mode: 'd20' }, difficulties: [{ label: 'Padrão', dt: 10 }],
 }
 
-function parse(text: string): { cfg?: SystemConfig; error?: string } {
+export function parse(text: string): { cfg?: SystemConfig; error?: string } {
   try {
     const cfg = JSON.parse(text)
     if (!cfg || typeof cfg !== 'object' || Array.isArray(cfg)) return { error: 'A configuração deve ser um objeto.' }

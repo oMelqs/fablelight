@@ -9,12 +9,12 @@ import Icon from '../Icon'
 export interface Creature { id: number; system_id: number; campaign_id: number | null; name: string; tier: string | null; tags: string | null; stats: CreatureStats; traits: string | null; notes: string | null }
 export const TIERS = ['Lacaio', 'Soldado', 'Elite', 'Terror', 'Lenda']
 
-export function CreatureEditor({ creature, config, onDelete, onCopy, scopeLabel }: {
-  creature: Creature; config: System['config']; onDelete: () => void; onCopy?: () => void; scopeLabel?: string
+export function CreatureEditor({ creature, config, onDelete, onCopy, scopeLabel, onSaved }: {
+  creature: Creature; config: System['config']; onDelete: () => void; onCopy?: () => void; scopeLabel?: string; onSaved?: () => void
 }) {
   const [c, setC] = useState({ name: creature.name, tier: creature.tier ?? '', tags: creature.tags ?? '', stats: creature.stats ?? {}, traits: creature.traits ?? '', notes: creature.notes ?? '' })
   const [st, track] = useSaving()
-  useAutosaveEq(c, (v) => { track(update('creatures', creature.id, v)) })
+  useAutosaveEq(c, (v) => { track(update('creatures', creature.id, v).then(() => onSaved?.())) })
   const s = c.stats
   const setSt = (p: Partial<CreatureStats>) => setC((x) => ({ ...x, stats: { ...x.stats, ...p } }))
   const setMap = (k: 'attributes' | 'skills', key: string, v: number) => setSt({ [k]: { ...s[k], [key]: v } })

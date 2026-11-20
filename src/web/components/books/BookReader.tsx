@@ -19,7 +19,7 @@ export default function BookReader({ bookId, chunkId, onNav }: { bookId: number;
   useEffect(() => { getJson<Row[]>(`/api/books/${bookId}/chunks`).then(setRows, () => {}) }, [bookId])
   useEffect(() => {
     setErr('')
-    getJson<Chunk>(`/api/books/${bookId}/chunks/${cur}`).then((x) => { setC(x); top.current?.closest('.pane, .workbench, .lib-main')?.scrollTo({ top: 0 }) }, (e) => setErr(e.message))
+    getJson<Chunk>(`/api/books/${bookId}/chunks/${cur}`).then((x) => { setC(x); top.current?.closest('.pane, .workbench, .lib-main')?.scrollTo({ top: 0 }); top.current?.querySelector('.bkr-doc')?.scrollTo({ top: 0 }) }, (e) => setErr(e.message))
   }, [bookId, cur])
   useEffect(() => { document.querySelector('.bkr-toc button.on')?.scrollIntoView({ block: 'nearest' }) }, [cur, rows.length])
 

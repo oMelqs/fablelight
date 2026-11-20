@@ -13,6 +13,7 @@ import combatRoutes from './routes/combat'
 import booksRoutes from './routes/books'
 import audioRoutes from './routes/audio'
 import prepRoutes from './routes/prep'
+import hubRoutes from './routes/hub'
 // -----------------------------------------
 
 seedDefaults()
@@ -40,6 +41,7 @@ combatRoutes(api)
 booksRoutes(api)
 audioRoutes(api)
 prepRoutes(api)
+hubRoutes(api)
 // -------------------------------------------------------------------------
 
 api.route('/', crud)
